@@ -1,0 +1,46 @@
+{
+  "name": "ga_seat_reservation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed:sections": "ts-node scripts/seed-sections.ts",
+    "seed:guest": "ts-node scripts/seed-guest-user.ts",
+    "seed:all": "npm run seed:guest && npm run seed:sections",
+    "clean:all": "ts-node scripts/clean-all-data.ts",
+    "migrate:slots": "ts-node scripts/migrate-to-slots.ts",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "dev:all": "npm run docker:up && npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^24.3.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "ioredis": "^5.7.0",
+    "morgan": "^1.10.1",
+    "pg": "^8.16.3",
+    "redis": "^5.8.2",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.26"
+  }
+}
